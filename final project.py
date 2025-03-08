@@ -19,7 +19,7 @@ def read_csv_file(file_path):
         print(f"Error reading the CSV file: {e}")
         return None
 
-# Function to send CSV data to ChatGPT (if needed)
+# Function to send CSV data to ChatGPT
 def chat_with_gpt(csv_text, question="Analyze this data."):
     try:
         response = openai.ChatCompletion.create(
@@ -71,10 +71,10 @@ if __name__ == "__main__":
     df = read_csv_file(file_path)
 
     if df is not None:
-        # Convert the DataFrame to string to pass to ChatGPT (optional)
+        # Convert the DataFrame to string to pass to ChatGPT
         csv_text = df.to_string(index=False)
         
-        # Send the data to ChatGPT (optional)
+        # Send the data to ChatGPT
         question = input("Enter your question for the AI regarding the CSV data: ")
         response = chat_with_gpt(csv_text, question)
 

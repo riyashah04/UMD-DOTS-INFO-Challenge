@@ -20,7 +20,7 @@ def read_csv_file(file_path):
         return None
 
 # Function to send CSV data to ChatGPT
-def chat_with_gpt(csv_text, question="Analyze this data."):
+def chat_with_gpt(csv_text, question="Find where I can park"):
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",  # Use "gpt-3.5-turbo" if needed
